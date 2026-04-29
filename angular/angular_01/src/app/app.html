@@ -1,0 +1,7 @@
+<app-navbar (tabChange)="onTabChange($event)"></app-navbar>
+<div *ngIf="selectedTab === 'users'">
+  <users-list></users-list>
+</div>
+<div *ngIf="selectedTab === 'documents'">
+  <app-documents></app-documents>
+</div>

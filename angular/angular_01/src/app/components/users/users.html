@@ -1,0 +1,20 @@
+<div>
+  <h2>Users Debug: {{ users.length }} users loaded</h2>
+  <pre>{{ users | json }}</pre>
+  
+  <ul *ngIf="users.length > 0">
+    <li *ngFor='let user of users'>
+      <p>{{ user.name }}</p>   
+      <p>{{ user.id }}</p> 
+      <button (click)="selectUser(user.id)">Voir posts     </button>  
+  </li>
+  </ul>
+  
+  <p *ngIf="users.length === 0">No users loaded yet...</p>
+    
+    <post-by-user
+        *ngIf="selectedUserId"
+        [userId]="selectedUserId">
+    </post-by-user>
+</div>
+
